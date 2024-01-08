@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\baby_sleep_trainer-main 2_wroking\\build\\integration_test\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-gu\\values-gu.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\lalit patidar\\.gradle\\caches\\transforms-3\\ca47131158958428d9b8ccd7a987edf4\\transformed\\core-1.6.0\\res\\values-gu\\values-gu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\baby_sleep_trainer-main 2_wroking\\build\\integration_test\\intermediates\\merged_res\\release\\values-gu\\values-gu.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\lalit patidar\\.gradle\\caches\\transforms-3\\ca47131158958428d9b8ccd7a987edf4\\transformed\\core-1.6.0\\res\\values-gu\\values-gu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

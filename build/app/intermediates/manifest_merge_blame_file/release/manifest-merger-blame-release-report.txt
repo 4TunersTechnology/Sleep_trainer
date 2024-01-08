@@ -1,0 +1,172 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="ferber.sleep.trainer"
+4    android:versionCode="3"
+5    android:versionName="3.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.VIBRATE" />
+11-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:2:3-64
+11-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:2:20-61
+12    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+12-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:3:3-79
+12-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:3:20-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:4:3-66
+13-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:4:20-63
+14    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+14-->[:flutter_local_notifications] E:\baby_sleep_trainer-main 2_wroking\build\flutter_local_notifications\intermediates\merged_manifest\release\AndroidManifest.xml:10:5-77
+14-->[:flutter_local_notifications] E:\baby_sleep_trainer-main 2_wroking\build\flutter_local_notifications\intermediates\merged_manifest\release\AndroidManifest.xml:10:22-74
+15
+16    <application
+16-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:5:3-46:17
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.6.0] C:\Users\lalit patidar\.gradle\caches\transforms-3\ca47131158958428d9b8ccd7a987edf4\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+18        android:icon="@mipmap/ic_launcher"
+18-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:5:62-96
+19        android:label="Sleep trainer - Ferber method" >
+19-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:5:16-61
+20        <activity
+20-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:6:5-25:16
+21            android:name="com.example.baby_sleep_scheduler.MainActivity"
+21-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:8:9-37
+22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+22-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:8:38-188
+23            android:exported="true"
+23-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:9:10-33
+24            android:hardwareAccelerated="true"
+24-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:8:189-223
+25            android:launchMode="singleTop"
+25-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:6:15-45
+26            android:showWhenLocked="true"
+26-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:8:267-296
+27            android:theme="@style/LaunchTheme"
+27-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:6:46-80
+28            android:turnScreenOn="true"
+28-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:8:297-324
+29            android:windowSoftInputMode="adjustResize" >
+29-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:8:224-266
+30
+31            <!--
+32           Specifies an Android theme to apply to this Activity as soon as
+33                 the Android process has started. This theme is visible to the user
+34                 while the Flutter UI initializes. After that, this theme continues
+35                 to determine the Window background behind the Flutter UI.
+36            -->
+37            <meta-data
+37-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:14:7-114
+38                android:name="io.flutter.embedding.android.NormalTheme"
+38-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:14:18-73
+39                android:resource="@style/NormalTheme" />
+39-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:14:74-111
+40            <!--
+41           Displays an Android View that continues showing the launch screen
+42                 Drawable until Flutter paints its first frame, then this splash
+43                 screen fades out. A splash screen is useful to avoid any visual
+44                 gap between the end of Android's launch screen and the painting of
+45                 Flutter's first frame.
+46            -->
+47            <meta-data
+47-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:20:7-132
+48                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+48-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:20:18-82
+49                android:resource="@drawable/launch_background" />
+49-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:20:83-129
+50
+51            <intent-filter>
+51-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:21:7-24:23
+52                <action android:name="android.intent.action.MAIN" />
+52-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:22:9-61
+52-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:22:17-58
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:23:9-69
+54-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:23:19-66
+55            </intent-filter>
+56        </activity>
+57        <!--
+58         Don't delete the meta-data below.
+59             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+60        -->
+61        <meta-data
+61-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:28:5-68
+62            android:name="flutterEmbedding"
+62-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:28:16-47
+63            android:value="2" />
+63-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:28:48-65
+64
+65        <service
+65-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:29:5-164
+66            android:name="io.flutter.plugins.androidalarmmanager.AlarmService"
+66-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:29:14-80
+67            android:exported="true"
+67-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:29:138-161
+68            android:permission="android.permission.BIND_JOB_SERVICE" />
+68-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:29:81-137
+69
+70        <receiver
+70-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:30:5-118
+71            android:name="io.flutter.plugins.androidalarmmanager.AlarmBroadcastReceiver"
+71-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:30:15-91
+72            android:exported="true" />
+72-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:30:92-115
+73        <receiver
+73-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:31:5-36:16
+74            android:name="io.flutter.plugins.androidalarmmanager.RebootBroadcastReceiver"
+74-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:31:15-92
+75            android:enabled="false"
+75-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:31:93-116
+76            android:exported="true" >
+76-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:32:9-32
+77            <intent-filter>
+77-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:33:7-35:23
+78                <action android:name="android.intent.action.BOOT_COMPLETED" />
+78-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:34:9-71
+78-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:34:17-68
+79            </intent-filter>
+80        </receiver>
+81        <receiver
+81-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:37:5-44:16
+82            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+82-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:38:9-97
+83            android:enabled="true"
+83-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:39:9-31
+84            android:exported="false" > <!-- Add android:exported attribute with value false -->
+84-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:40:9-33
+85            <intent-filter>
+85-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:33:7-35:23
+86                <action android:name="android.intent.action.BOOT_COMPLETED" />
+86-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:34:9-71
+86-->E:\baby_sleep_trainer-main 2_wroking\android\app\src\main\AndroidManifest.xml:34:17-68
+87            </intent-filter>
+88        </receiver>
+89
+90        <activity
+90-->[:url_launcher] E:\baby_sleep_trainer-main 2_wroking\build\url_launcher\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-13:74
+91            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+91-->[:url_launcher] E:\baby_sleep_trainer-main 2_wroking\build\url_launcher\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-74
+92            android:exported="false"
+92-->[:url_launcher] E:\baby_sleep_trainer-main 2_wroking\build\url_launcher\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-37
+93            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+93-->[:url_launcher] E:\baby_sleep_trainer-main 2_wroking\build\url_launcher\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-71
+94
+95        <uses-library
+95-->[androidx.window:window:1.0.0-beta04] C:\Users\lalit patidar\.gradle\caches\transforms-3\59e9b2e3588dffb6d94e0e6cf0de01d5\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+96            android:name="androidx.window.extensions"
+96-->[androidx.window:window:1.0.0-beta04] C:\Users\lalit patidar\.gradle\caches\transforms-3\59e9b2e3588dffb6d94e0e6cf0de01d5\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+97            android:required="false" />
+97-->[androidx.window:window:1.0.0-beta04] C:\Users\lalit patidar\.gradle\caches\transforms-3\59e9b2e3588dffb6d94e0e6cf0de01d5\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+98        <uses-library
+98-->[androidx.window:window:1.0.0-beta04] C:\Users\lalit patidar\.gradle\caches\transforms-3\59e9b2e3588dffb6d94e0e6cf0de01d5\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+99            android:name="androidx.window.sidecar"
+99-->[androidx.window:window:1.0.0-beta04] C:\Users\lalit patidar\.gradle\caches\transforms-3\59e9b2e3588dffb6d94e0e6cf0de01d5\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+100            android:required="false" />
+100-->[androidx.window:window:1.0.0-beta04] C:\Users\lalit patidar\.gradle\caches\transforms-3\59e9b2e3588dffb6d94e0e6cf0de01d5\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+101    </application>
+102
+103</manifest>

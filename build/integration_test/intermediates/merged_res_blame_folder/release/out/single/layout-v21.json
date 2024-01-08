@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\baby_sleep_trainer-main 2_wroking\\build\\integration_test\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\lalit patidar\\.gradle\\caches\\transforms-3\\ca47131158958428d9b8ccd7a987edf4\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\baby_sleep_trainer-main 2_wroking\\build\\integration_test\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\lalit patidar\\.gradle\\caches\\transforms-3\\ca47131158958428d9b8ccd7a987edf4\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\baby_sleep_trainer-main 2_wroking\\build\\integration_test\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\lalit patidar\\.gradle\\caches\\transforms-3\\ca47131158958428d9b8ccd7a987edf4\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\baby_sleep_trainer-main 2_wroking\\build\\integration_test\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\lalit patidar\\.gradle\\caches\\transforms-3\\ca47131158958428d9b8ccd7a987edf4\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    }
+]
