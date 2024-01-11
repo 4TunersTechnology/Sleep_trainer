@@ -1,4 +1,5 @@
 import 'package:baby_sleep_scheduler/generated/l10n.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class LabelDisplay extends StatelessWidget {
@@ -34,27 +35,34 @@ class TimeLabel extends StatelessWidget {
         children: [
           const Expanded(flex: 5, child: SizedBox()),
           LabelDisplay(
-            '1st'+ " " +S.of(context).check +
+            '1st' +
+                " " +
+                "check".tr() +
                 (MediaQuery.of(context).orientation == Orientation.portrait
-                    ? S.of(context).after
+                    ? "after".tr()
                     : ''),
           ),
           LabelDisplay(
-            '2nd '+ " " +S.of(context).check +
+            '2nd ' +
+                " " +
+                "check".tr() +
                 (MediaQuery.of(context).orientation == Orientation.portrait
-                    ? S.of(context).after
+                    ? "after".tr()
                     : ''),
           ),
           LabelDisplay(
             '3rd check' +
-            " " +S.of(context).check +
+                " " +
+                "check".tr() +
                 (MediaQuery.of(context).orientation == Orientation.portrait
-                    ? S.of(context).after
+                    ? "after".tr()
                     : ''),
           ),
           LabelDisplay(
-            S.of(context).following+" " +(MediaQuery.of(context).orientation == Orientation.portrait
-                    ? S.of(context).after
+            "following".tr() +
+                " " +
+                (MediaQuery.of(context).orientation == Orientation.portrait
+                    ? "after".tr()
                     : ''),
           ),
         ],

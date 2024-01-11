@@ -2,6 +2,7 @@ import 'package:baby_sleep_scheduler/views/help/alarm_option.dart';
 import 'package:baby_sleep_scheduler/views/help/night_theme_option.dart';
 import 'package:baby_sleep_scheduler/views/help/q_and_a.dart';
 import 'package:baby_sleep_scheduler/views/main/main_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
@@ -19,7 +20,6 @@ class HelpView extends StatefulWidget {
 class _HelpViewState extends State<HelpView> {
   Key _key = UniqueKey();
 
-
   void _refresh() => setState(() => _key = UniqueKey());
 
   @override
@@ -29,7 +29,7 @@ class _HelpViewState extends State<HelpView> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 0, 16),
           child: Text(
-            S.of(context).Settings,
+            "Settings".tr(),
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
@@ -52,10 +52,10 @@ class _HelpViewState extends State<HelpView> {
                     color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child:  Padding(
+                  child: Padding(
                     padding: EdgeInsets.fromLTRB(26, 12, 26, 12),
                     child: Text(
-                      S.of(context).TUTORIAL,
+                      "TUTORIAL".tr(),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -72,13 +72,12 @@ class _HelpViewState extends State<HelpView> {
         Padding(
           padding: const EdgeInsets.only(left: 16, bottom: 16, top: 20),
           child: Text(
-            S.of(context).FAQ,
+            "FAQ".tr(),
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ),
         const Divider(height: 0, indent: 16, endIndent: 16),
         QandA(_key),
-
       ],
     );
   }

@@ -2,6 +2,7 @@ import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/logic/cache/db.dart';
 import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
 import 'package:baby_sleep_scheduler/views/trainer/trainer_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
@@ -38,19 +39,19 @@ class _ClearLogsDialogState extends State<ClearLogsDialog> {
         Padding(
           padding: const EdgeInsets.only(bottom: 16),
           child: Text(
-            S.of(context).DeleteAllRecordedActivityThis,
+            "DeleteAllRecordedActivityThis".tr(),
           ),
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildDialogButton(
-              text: S.of(context).Yes,
+              text: "Yes".tr(),
               onPressed: _deleteLogs,
             ),
             const SizedBox(width: 12),
             _buildDialogButton(
-              text: S.of(context).No,
+              text: "No".tr(),
               onPressed: () => Navigator.pop(context, false),
             ),
           ],
@@ -76,11 +77,11 @@ class _ClearLogsDialogState extends State<ClearLogsDialog> {
       child: _deleting
           ? CircularProgressIndicator()
           : Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: AlertDialog(
-          content: _buildDialogContent(),
-        ),
-      ),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: AlertDialog(
+                content: _buildDialogContent(),
+              ),
+            ),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:baby_sleep_scheduler/views/main/onboarding/bloc/color_controller
 import 'package:baby_sleep_scheduler/views/main/onboarding/bloc/indicator_controller.dart';
 import 'package:baby_sleep_scheduler/views/main/onboarding/navigation/page_navigation.dart';
 import 'package:baby_sleep_scheduler/views/main/onboarding/onboarding_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
@@ -60,21 +61,22 @@ class _OnboardingViewState extends State<OnboardingView> {
             controller: _pageController,
             children: [
               OnboardingPage(
-                icon: Icons.nights_stay,
-                text: S.of(context).TrainerTrainingTimerWhichGuidesYouThroughToApplyingTheFerberMethodForYourChild
-              ),
+                  icon: Icons.nights_stay,
+                  text:
+                      "TrainerTrainingTimerWhichGuidesYouThroughToApplyingTheFerberMethodForYourChild"
+                          .tr()),
               OnboardingPage(
-                icon: Icons.leaderboard,
-                text:S.of(context).OnbordingActivity+" "+S.of(context).OnbordingActivity2
-              ),
+                  icon: Icons.leaderboard,
+                  text: "OnbordingActivity".tr() +
+                      " " +
+                      "OnbordingActivity2".tr()),
               OnboardingPage(
                 icon: Icons.query_builder,
-                text:S.of(context).OnbordingEditor,
-
+                text: "OnbordingEditor".tr(),
               ),
               OnboardingPage(
                 icon: Icons.help_center,
-                text:S.of(context).OnbordingHelp,
+                text: "OnbordingHelp".tr(),
               ),
             ],
           ),
@@ -103,7 +105,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             initialData: Theme.of(context).primaryColor,
             builder: (context, color) => TextButton(
               child: Text(
-                S.of(context).skip,
+                "skip".tr(),
                 style: TextStyle(
                   fontSize: 16,
                   color: color.data,

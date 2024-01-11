@@ -1,4 +1,5 @@
 import 'package:baby_sleep_scheduler/generated/l10n.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedGuide extends StatefulWidget {
@@ -36,7 +37,7 @@ class _AnimatedGuideState extends State<AnimatedGuide>
     return Opacity(
       opacity: _animation.value,
       child: Text(
-        S.of(context).CheckBaby,
+        "CheckBaby".tr(),
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 17,

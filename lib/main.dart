@@ -76,14 +76,9 @@
 //
 //
 
-
-
-
-
-
-
 import 'package:baby_sleep_scheduler/provider/app_locale.dart';
 import 'package:baby_sleep_scheduler/views/language_selection/language_selection.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -98,7 +93,7 @@ import 'global/values.dart' as values;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await S.load(Locale('en'));
+  await EasyLocalization.ensureInitialized();
   await Notifications.init();
   await DB.init();
   await Prefs.init();
@@ -115,7 +110,19 @@ void main() async {
         ChangeNotifierProvider(create: (context) => AppLocale()),
         // Add other providers as needed
       ],
-      child: MyApp(onboarded),
+      child: EasyLocalization(
+          supportedLocales: [
+            Locale('en'),
+            Locale('fr'),
+            Locale('de'),
+            Locale('es'),
+            Locale('ko'),
+            Locale('pt')
+          ],
+          path:
+              'assets/translations', // <-- change the path of the translation files
+          fallbackLocale: Locale('en'),
+          child: MyApp(onboarded)),
     ),
   );
 
@@ -131,32 +138,16 @@ class SleepTrainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppLocale>(
       builder: (context, appLocale, child) {
-        List<LocalizationsDelegate<dynamic>> localizationsDelegates = [
-          S.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ];
-
         // Add MaterialLocalizations.delegate for the 'fr' locale
-        if (appLocale.locale.languageCode == 'fr' ||
-            appLocale.locale.languageCode == 'de') {
-          localizationsDelegates.add(GlobalMaterialLocalizations.delegate);
-        }
 
         return StreamBuilder(
           stream: CustomTheme.stream,
           builder: (context, nightTheme) => MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: CustomTheme.themeData,
-            locale: appLocale.locale,
-            localizationsDelegates: localizationsDelegates,
-              // localizationsDelegates: [
-              // S.delegate,
-              // // other delegates
-              // GlobalMaterialLocalizations.delegate,
-              // GlobalWidgetsLocalizations.delegate,
-              // ],
-            supportedLocales: S.delegate.supportedLocales,
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
             home: LanguageBasedOnUserSelection(),
           ),
         );
@@ -164,7 +155,6 @@ class SleepTrainer extends StatelessWidget {
     );
   }
 }
-
 
 class MyApp extends StatelessWidget {
   final bool onboarded;

@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
@@ -25,9 +26,9 @@ class _NightThemeOptionState extends State<NightThemeOption> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-           Text(
+          Text(
             // 'Dark Theme',
-           S.of(context).DarkTheme,
+            "DarkTheme".tr(),
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,

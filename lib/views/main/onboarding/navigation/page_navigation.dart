@@ -1,4 +1,5 @@
 import 'package:baby_sleep_scheduler/views/main/onboarding/navigation/page_indicators/indicator_dots.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -74,11 +75,11 @@ class PageNavigationState extends State<PageNavigation>
                       color: widget.color,
                       borderRadius: BorderRadius.circular(4),
                     ),
-                    child:  Padding(
+                    child: Padding(
                       padding: EdgeInsets.fromLTRB(26, 10, 26, 10),
                       child: Center(
                         child: Text(
-                          S.of(context).gotIt,
+                          "gotIt".tr(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

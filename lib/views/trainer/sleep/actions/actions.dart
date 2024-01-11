@@ -2,6 +2,7 @@ import 'package:baby_sleep_scheduler/generated/l10n.dart';
 import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
 import 'package:baby_sleep_scheduler/views/trainer/sleep/actions/end_session_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SleepActions extends StatelessWidget {
@@ -33,7 +34,9 @@ class SleepActions extends StatelessWidget {
                 flex: 2,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black, backgroundColor: Theme.of(context).backgroundColor,// Text color
+                    foregroundColor: Colors.black,
+                    backgroundColor:
+                        Theme.of(context).backgroundColor, // Text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                       side: BorderSide(color: Colors.grey.shade200),
@@ -63,10 +66,10 @@ class SleepActions extends StatelessWidget {
                   },
                   child: Text(
                     mode == States.playing.label
-                        ? S.of(context).BabyAsleep
+                        ? "BabyAsleep".tr()
                         : cryTimeOver
-                        ? S.of(context).EndTraining
-                        : S.of(context).BabyAwake,
+                            ? "EndTraining".tr()
+                            : "BabyAwake".tr(),
                   ),
                 ),
               ),
@@ -100,8 +103,8 @@ class SleepActions extends StatelessWidget {
                   },
                   child: Text(
                     mode == States.crying.label && cryTimeOver
-                        ? S.of(context).CheckedOnBaby
-                        : S.of(context).BabyCrying,
+                        ? "CheckedOnBaby".tr()
+                        : "BabyCrying".tr(),
                   ),
                 ),
               ),
@@ -111,7 +114,8 @@ class SleepActions extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-               backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -125,7 +129,7 @@ class SleepActions extends StatelessWidget {
                   // Handle the error as needed
                 }
               },
-              child: Text(S.of(context).EndSession),
+              child: Text("EndSession".tr()),
             ),
         ],
       ),

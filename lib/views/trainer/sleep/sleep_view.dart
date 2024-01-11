@@ -8,6 +8,7 @@ import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
 import 'package:baby_sleep_scheduler/logic/notifications/notifications.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
 import 'package:baby_sleep_scheduler/views/activity/activity_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'timer/center_timer.dart';
 import 'timer/timer.dart';
 import 'actions/actions.dart';
@@ -365,17 +366,15 @@ class _SleepViewState extends State<SleepView> with WidgetsBindingObserver {
                               builder: (context, mode) => RichText(
                                 text: TextSpan(
                                   children: [
-                                     TextSpan(
-                                      text: S.of(context).BabyIs,
+                                    TextSpan(
+                                      text: "BabyIs".tr(),
                                       style: TextStyle(
                                         fontWeight: FontWeight.w300,
                                         color: Colors.grey,
                                         fontSize: 15,
                                       ),
                                     ),
-                                   TextSpan(
-                                     text: "  "
-                                   ),
+                                    TextSpan(text: "  "),
                                     TextSpan(
                                       text: mode.data[0].toUpperCase() +
                                           mode.data.substring(1),
@@ -392,7 +391,10 @@ class _SleepViewState extends State<SleepView> with WidgetsBindingObserver {
                               ),
                             ),
                             Text(
-                              S.of(context).Day+'${_day + 1} • '+S.of(context).Session +'${_sessionNumber + 1}',
+                              "Day".tr() +
+                                  '${_day + 1} • ' +
+                                  "Session".tr() +
+                                  '${_sessionNumber + 1}',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 color: Colors.grey,
@@ -410,7 +412,6 @@ class _SleepViewState extends State<SleepView> with WidgetsBindingObserver {
                                 'assets/images/' +
                                     mode.data.toLowerCase() +
                                     '.png',
-
                                 height: 100,
                               ),
                             )
@@ -435,7 +436,7 @@ class _SleepViewState extends State<SleepView> with WidgetsBindingObserver {
                     'In order for the training to be successful, '
                     'please wait until the time below has passed before checking on your baby.',
                     // 'Um das Training erfolgreich durchzuführen, warten Sie bitte, bis die unten angegebene Zeit verstrichen ist, bevor Sie nach Ihrem Baby sehen.',
-                        // 'please wait until the time below has passed before checking on your baby.',
+                    // 'please wait until the time below has passed before checking on your baby.',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.red.shade300, fontSize: 15),
                   ),

@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/generated/l10n.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'delete_log_dialog.dart';
 
@@ -18,10 +19,10 @@ class ChartColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> _labels = [
-      S.of(context).Crying,
-      S.of(context).Awake,
-      S.of(context).Sleeping,
-      S.of(context).TimeToSleep,
+      "Crying".tr(),
+      "Awake".tr(),
+      "Sleeping".tr(),
+      "TimeToSleep".tr(),
     ];
 
     return Expanded(
@@ -35,9 +36,10 @@ class ChartColumn extends StatelessWidget {
             ),
             child: Text(
               (value == null
-                  ? '${(cryingValue / 60).floor() + (awakeValue / 60).floor()}'
-                  : '${(value / 60).floor()}') +
-                  '\n'+S.of(context).min,
+                      ? '${(cryingValue / 60).floor() + (awakeValue / 60).floor()}'
+                      : '${(value / 60).floor()}') +
+                  '\n' +
+                  "min".tr(),
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color.fromARGB(255, 61, 61, 61),
@@ -90,10 +92,10 @@ class LogEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> _labels = [
-      S.of(context).Crying,
-      S.of(context).Awake,
-      S.of(context).Sleeping,
-      S.of(context).TimeToSleep,
+      "Crying".tr(),
+      "Awake".tr(),
+      "Sleeping".tr(),
+      "TimeToSleep".tr(),
     ];
 
     final bool _longTime = log['cryTime'] > 21600 ||
@@ -119,9 +121,10 @@ class LogEntry extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Text(
-                      S.of(context).Day +
-                          ' ${log['day'] + 1} - ${log['type']}' +' '+
-                          S.of(context).training,
+                      "Day".tr() +
+                          ' ${log['day'] + 1} - ${log['type']}' +
+                          ' ' +
+                          "training".tr(),
                       textAlign: TextAlign.center,
                       style: const TextStyle(fontSize: 16),
                     ),
@@ -137,8 +140,7 @@ class LogEntry extends StatelessWidget {
                           barrierColor: CustomTheme.nightTheme
                               ? Colors.black87
                               : Colors.white.withOpacity(0.87),
-                          builder: (context) =>
-                              DeleteLogDialog(id: log['id']),
+                          builder: (context) => DeleteLogDialog(id: log['id']),
                         );
 
                         if (rebuild != null && rebuild) refresh();

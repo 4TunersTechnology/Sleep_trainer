@@ -1,6 +1,7 @@
 import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
 import 'package:baby_sleep_scheduler/views/activity/clear_logs/clear_logs_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
@@ -11,15 +12,15 @@ class ClearLogsButtonStyles {
   ClearLogsButtonStyles(this.context);
 
   BoxDecoration get buttonDecoration => BoxDecoration(
-    borderRadius: BorderRadius.circular(8),
-    color: Theme.of(context).backgroundColor,
-    border: Border.all(color: Colors.grey.shade200),
-  );
+        borderRadius: BorderRadius.circular(8),
+        color: Theme.of(context).backgroundColor,
+        border: Border.all(color: Colors.grey.shade200),
+      );
 
   TextStyle get buttonTextStyle => TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 15,
-  );
+        fontWeight: FontWeight.bold,
+        fontSize: 15,
+      );
 }
 
 class ClearLogsButton extends StatelessWidget {
@@ -30,12 +31,12 @@ class ClearLogsButton extends StatelessWidget {
 
   Future<bool> showClearLogsDialog(BuildContext context) async {
     return await showDialog(
-      context: context,
-      barrierColor: CustomTheme.nightTheme
-          ? Colors.black87
-          : Colors.white.withOpacity(0.87),
-      builder: (context) => ClearLogsDialog(),
-    ) ??
+          context: context,
+          barrierColor: CustomTheme.nightTheme
+              ? Colors.black87
+              : Colors.white.withOpacity(0.87),
+          builder: (context) => ClearLogsDialog(),
+        ) ??
         false;
   }
 
@@ -46,17 +47,17 @@ class ClearLogsButton extends StatelessWidget {
       child: GestureDetector(
         onTap: Values.sessionActive
             ? () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          elevation: 0,
-          margin: const EdgeInsets.all(8),
-          behavior: SnackBarBehavior.floating,
-          content: Text(
-            S.of(context).CantClearLogs,
-          ),
-        ))
+                  elevation: 0,
+                  margin: const EdgeInsets.all(8),
+                  behavior: SnackBarBehavior.floating,
+                  content: Text(
+                    "CantClearLogs".tr(),
+                  ),
+                ))
             : () async {
-          final bool shouldDelete = await showClearLogsDialog(context);
-          if (shouldDelete) refresh();
-        },
+                final bool shouldDelete = await showClearLogsDialog(context);
+                if (shouldDelete) refresh();
+              },
         child: DecoratedBox(
           decoration: buttonStyles.buttonDecoration,
           child: SizedBox(
@@ -68,7 +69,7 @@ class ClearLogsButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    S.of(context).ClearTrainingActivity,
+                    "ClearTrainingActivity".tr(),
                     style: buttonStyles.buttonTextStyle,
                   ),
                   const Icon(Icons.delete_forever),

@@ -7,29 +7,29 @@ import 'package:timezone/timezone.dart' as tz;
 
 abstract class Notifications {
   static FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   static Future<void> init() async {
     // Initialise the plugin. app_icon needs to be added as a drawable resource to the Android head project.
     const AndroidInitializationSettings initializationSettingsAndroid =
-    AndroidInitializationSettings('icon');
+        AndroidInitializationSettings('icon');
     // final IOSInitializationSettings initializationSettingsIOS =
     // IOSInitializationSettings();
     final InitializationSettings initializationSettings =
-    InitializationSettings(
+        InitializationSettings(
       android: initializationSettingsAndroid,
       // iOS: initializationSettingsIOS,
     );
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    //await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
     tz.initializeTimeZones();
     final String currentTimeZone =
-    await FlutterNativeTimezone.getLocalTimezone();
+        await FlutterNativeTimezone.getLocalTimezone();
     tz.setLocalLocation(tz.getLocation(currentTimeZone));
   }
 
   static const AndroidNotificationDetails androidPlatformChannelSpecifics =
-  AndroidNotificationDetails(
+      AndroidNotificationDetails(
     '0',
     'none',
     // 'none',
@@ -39,22 +39,22 @@ abstract class Notifications {
   );
 
   static const NotificationDetails platformChannelSpecifics =
-  NotificationDetails(android: androidPlatformChannelSpecifics);
+      NotificationDetails(android: androidPlatformChannelSpecifics);
 
   static DateTime _notificationTime;
 
   static Future<void> scheduleNotification() async {
     if (Values.alarms) {
       final int sessionNumber =
-      Prefs.instance.getInt(Cached.sessionNumber.label);
+          Prefs.instance.getInt(Cached.sessionNumber.label);
       final int delay = sessionTimes[
-      Prefs.instance.getString(Cached.sessionType.label) ??
-          'regular'][Values.currentDay > 6 ? 6 : Values.currentDay]
-      [sessionNumber == null
-          ? 0
-          : sessionNumber <= 3
-          ? sessionNumber
-          : 3];
+              Prefs.instance.getString(Cached.sessionType.label) ??
+                  'regular'][Values.currentDay > 6 ? 6 : Values.currentDay]
+          [sessionNumber == null
+              ? 0
+              : sessionNumber <= 3
+                  ? sessionNumber
+                  : 3];
 
       _notificationTime = DateTime.now().add(Duration(minutes: delay));
       Prefs.instance
@@ -69,7 +69,7 @@ abstract class Notifications {
         platformChannelSpecifics,
         androidAllowWhileIdle: true,
         uiLocalNotificationDateInterpretation:
-        UILocalNotificationDateInterpretation.absoluteTime,
+            UILocalNotificationDateInterpretation.absoluteTime,
       );
 
       // if (io.Platform.isAndroid)

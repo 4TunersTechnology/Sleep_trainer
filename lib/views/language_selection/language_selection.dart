@@ -1,4 +1,5 @@
 import 'package:baby_sleep_scheduler/views/main/main_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:baby_sleep_scheduler/provider/app_locale.dart';
 import 'package:provider/provider.dart';
@@ -9,10 +10,12 @@ class LanguageBasedOnUserSelection extends StatefulWidget {
 
   const LanguageBasedOnUserSelection({this.onboarded});
   @override
-  _LanguageBasedOnUserSelectionState createState() => _LanguageBasedOnUserSelectionState();
+  _LanguageBasedOnUserSelectionState createState() =>
+      _LanguageBasedOnUserSelectionState();
 }
 
-class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelection> {
+class _LanguageBasedOnUserSelectionState
+    extends State<LanguageBasedOnUserSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +29,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-                backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -38,7 +42,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-                backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -50,7 +55,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-                backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -62,7 +68,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-                backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -74,7 +81,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-                backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -86,7 +94,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.black,
-                backgroundColor: Theme.of(context).backgroundColor,// Text color
+                backgroundColor:
+                    Theme.of(context).backgroundColor, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: Colors.grey.shade200),
@@ -101,8 +110,8 @@ class _LanguageBasedOnUserSelectionState extends State<LanguageBasedOnUserSelect
     );
   }
 
-  _setLanguage(BuildContext context, String languageCode) {
-    Provider.of<AppLocale>(context, listen: false).changeLocale(languageCode);
+  _setLanguage(BuildContext context, String languageCode) async {
+    await context.setLocale(Locale(languageCode));
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => MainView(widget.onboarded)),

@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/views/activity/summary_graph/controller.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
@@ -78,7 +79,7 @@ class _StackedAreaLineChartState extends State<StackedAreaLineChart> {
           g: modeColors[mode] >> 8 & 0xFF,
           b: modeColors[mode] & 0xFF,
         ),
-        domainFn: (SleepData sales, _) => S.of(context).Day + ' ${sales.day}',
+        domainFn: (SleepData sales, _) => "Day".tr() + ' ${sales.day}',
         measureFn: (SleepData sales, _) => sales.time,
       ),
     ];

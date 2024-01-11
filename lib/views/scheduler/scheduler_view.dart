@@ -4,6 +4,7 @@ import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
 import 'package:baby_sleep_scheduler/views/scheduler/by_day_view.dart';
 import 'package:baby_sleep_scheduler/views/scheduler/bloc/method_controller.dart';
 import 'package:baby_sleep_scheduler/views/scheduler/time_label.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class TimesModel {
@@ -176,7 +177,8 @@ class _SchedulerViewState extends State<SchedulerView> {
                         ),
                       ),
                     ),
-                     Text(S.of(context).TapToChange,
+                    Text(
+                      "TapToChange".tr(),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.grey,
@@ -192,7 +194,7 @@ class _SchedulerViewState extends State<SchedulerView> {
                     elevation: 0,
                     behavior: SnackBarBehavior.floating,
                     margin: const EdgeInsets.all(12),
-                    content: Text(S.of(context).CantEditWhile)))
+                    content: Text("CantEditWhile".tr())))
                 : () {
                     _setSessionType();
                     showModalBottomSheet(
@@ -207,25 +209,23 @@ class _SchedulerViewState extends State<SchedulerView> {
                             child: MethodOption(
                               option: 'regular',
                               initial: _sessionType,
-                              label: S.of(context).RegularFerberMethod,
-                              description:
-                                  S.of(context).RegularDis,
+                              label: "RegularFerberMethod".tr(),
+                              description: "RegularDis".tr(),
                             ),
                           ),
                           Divider(height: 0),
                           MethodOption(
                             option: 'mild',
                             initial: _sessionType,
-                            label: S.of(context).MildFerberMethod,
-                            description:
-                                S.of(context).MildDis,
+                            label: "MildFerberMethod".tr(),
+                            description: "MildDis".tr(),
                           ),
                           Divider(height: 0),
                           MethodOption(
                             option: 'custom',
                             initial: _sessionType,
-                            label: S.of(context).CustomMethod,
-                            description:S.of(context).CustomDis,
+                            label: "CustomMethod".tr(),
+                            description: "CustomDis".tr(),
                           ),
                         ],
                       ),

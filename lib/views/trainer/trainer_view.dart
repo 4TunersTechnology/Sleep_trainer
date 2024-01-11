@@ -2,9 +2,8 @@ import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
 import 'package:baby_sleep_scheduler/views/trainer/inactive_view.dart';
 import 'package:baby_sleep_scheduler/views/trainer/sleep/sleep_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import '../../generated/l10n.dart';
 
 class TrainerView extends StatefulWidget {
   static _TrainerViewState _state;
@@ -51,15 +50,15 @@ class _TrainerViewState extends State<TrainerView>
                       // Text(
                       //   'Your session ended automatically due to inactivity.',
                       // ),
-                      Text(S.of(context).YourSessionEndedAutomaticallyDueToInactivity),
+                      Text("YourSessionEndedAutomaticallyDueToInactivity".tr()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8),
                         child: TextButton(
-                          child:  Text(
-                            S.of(context).OK,
+                          child: Text(
+                            "OK".tr(),
                             style: TextStyle(color: Colors.white),
                           ),
-                   //       color: Theme.of(context).primaryColor,
+                          //       color: Theme.of(context).primaryColor,
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),

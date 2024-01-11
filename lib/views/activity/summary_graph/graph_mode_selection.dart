@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/generated/l10n.dart';
 import 'package:baby_sleep_scheduler/views/activity/summary_graph/controller.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class GraphModeButton extends StatelessWidget {
@@ -15,7 +16,7 @@ class GraphModeButton extends StatelessWidget {
       builder: (context, currentMode) => TextButton(
         style: ButtonStyle(
           overlayColor:
-          MaterialStateProperty.all(Theme.of(context).primaryColor),
+              MaterialStateProperty.all(Theme.of(context).primaryColor),
         ),
         child: Text(
           label,
@@ -45,22 +46,22 @@ class GraphModeButtons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          GraphModeButton(label: S.of(context).Crying, mode: 'cryTime'),
+          GraphModeButton(label: "Crying".tr(), mode: 'cryTime'),
           const DecoratedBox(
             decoration: BoxDecoration(color: Colors.grey),
             child: SizedBox(width: 0.5, height: 24),
           ),
-          GraphModeButton(label: S.of(context).Awake, mode: 'awakeTime'),
+          GraphModeButton(label: "Awake".tr(), mode: 'awakeTime'),
           const DecoratedBox(
             decoration: BoxDecoration(color: Colors.grey),
             child: SizedBox(width: 0.5, height: 24),
           ),
-          GraphModeButton(label: S.of(context).Sleep, mode: 'totalTime'),
+          GraphModeButton(label: "Sleep".tr(), mode: 'totalTime'),
           const DecoratedBox(
             decoration: BoxDecoration(color: Colors.grey),
             child: SizedBox(width: 0.5, height: 24),
           ),
-          GraphModeButton(label: S.of(context).TimeToSleep, mode: 'other'),
+          GraphModeButton(label: "TimeToSleep".tr(), mode: 'other'),
         ],
       ),
     );

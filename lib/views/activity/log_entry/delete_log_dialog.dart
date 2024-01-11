@@ -2,6 +2,7 @@ import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/logic/cache/db.dart';
 import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
 import 'package:baby_sleep_scheduler/views/trainer/trainer_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
@@ -38,20 +39,20 @@ class DeleteLogDialog extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(bottom: 16),
-          child: Text(S.of(context).AreYouSureYouWantToDeleteThisEntry),
+          child: Text("AreYouSureYouWantToDeleteThisEntry".tr()),
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildDialogButton(
               context,
-              text: S.of(context).Yes,
+              text: "Yes".tr(),
               onPressed: () => _deleteLog(context),
             ),
             const SizedBox(width: 12),
             _buildDialogButton(
               context,
-              text: S.of(context).No,
+              text: "No".tr(),
               onPressed: () => Navigator.pop(context),
             ),
           ],
@@ -61,13 +62,14 @@ class DeleteLogDialog extends StatelessWidget {
   }
 
   Widget _buildDialogButton(
-      BuildContext context, {
-        String text,
-        VoidCallback onPressed,
-      }) {
+    BuildContext context, {
+    String text,
+    VoidCallback onPressed,
+  }) {
     return TextButton(
       style: TextButton.styleFrom(
-        foregroundColor: Colors.white, backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       onPressed: onPressed,
       child: Text(text),

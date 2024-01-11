@@ -5,6 +5,7 @@ import 'package:baby_sleep_scheduler/views/activity/summary_graph/controller.dar
 import 'package:baby_sleep_scheduler/views/activity/summary_graph/graph_mode_selection.dart';
 import 'package:baby_sleep_scheduler/views/activity/summary_graph/graph.dart';
 import 'package:baby_sleep_scheduler/views/activity/log_entry/log_entry.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ActivityView extends StatefulWidget {
@@ -42,7 +43,7 @@ class _ActivityViewState extends State<ActivityView> {
       child: Stack(
         children: [
           StackedAreaLineChart(logs),
-          if (!(logs.isNotEmpty)) Center(child: Text(S.of(context).NoRecordedLogs)),
+          if (!(logs.isNotEmpty)) Center(child: Text("NoRecordedLogs".tr())),
         ],
       ),
     );
@@ -69,27 +70,27 @@ class _ActivityViewState extends State<ActivityView> {
       future: _getLogs(),
       builder: (context, logs) => logs.hasError
           ? Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(logs.error.toString(), textAlign: TextAlign.center),
-        ),
-      )
-          : logs.connectionState == ConnectionState.done
-          ? SingleChildScrollView(
-        child: Column(
-          children: [
-            GraphModeButtons(),
-            buildGraph(logs.data),
-            if (logs.data.isNotEmpty)
-              ClearLogsButton(
-                refresh: refresh,
-                buttonStyles: ClearLogsButtonStyles(context),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Text(logs.error.toString(), textAlign: TextAlign.center),
               ),
-            buildLogEntries(logs.data),
-          ],
-        ),
-      )
-          : Center(child: CircularProgressIndicator()),
+            )
+          : logs.connectionState == ConnectionState.done
+              ? SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      GraphModeButtons(),
+                      buildGraph(logs.data),
+                      if (logs.data.isNotEmpty)
+                        ClearLogsButton(
+                          refresh: refresh,
+                          buttonStyles: ClearLogsButtonStyles(context),
+                        ),
+                      buildLogEntries(logs.data),
+                    ],
+                  ),
+                )
+              : Center(child: CircularProgressIndicator()),
     );
   }
 

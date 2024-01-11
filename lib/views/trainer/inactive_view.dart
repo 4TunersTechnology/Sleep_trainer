@@ -1,6 +1,7 @@
 import 'package:baby_sleep_scheduler/generated/l10n.dart';
 import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:baby_sleep_scheduler/logic/cache/db.dart';
 
@@ -52,8 +53,8 @@ class _InactiveViewState extends State<InactiveView> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-               Text(
-                S.of(context).FerberSleepTrainer,
+              Text(
+                "FerberSleepTrainer".tr(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -62,10 +63,8 @@ class _InactiveViewState extends State<InactiveView> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Text(S.of(context).HelpBaby),
-
+                child: Text("HelpBaby".tr()),
               ),
-
             ],
           ),
         ),
@@ -89,7 +88,9 @@ class _InactiveViewState extends State<InactiveView> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
-                    _cachedDay == null ? S.of(context).Day+'1' : S.of(context).Day+'${_cachedDay + 1}',
+                    _cachedDay == null
+                        ? "Day".tr() + '1'
+                        : "Day".tr() + '${_cachedDay + 1}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 26,
@@ -118,10 +119,10 @@ class _InactiveViewState extends State<InactiveView> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-               Padding(
+              Padding(
                 padding: EdgeInsets.only(bottom: 14),
                 child: Text(
-                  S.of(context).OnceYoureReady,
+                  "OnceYoureReady".tr(),
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
@@ -136,9 +137,9 @@ class _InactiveViewState extends State<InactiveView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 48,
-                    child:  Center(
+                    child: Center(
                       child: Text(
-                        S.of(context).PlacedBaby,
+                        "PlacedBaby".tr(),
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,

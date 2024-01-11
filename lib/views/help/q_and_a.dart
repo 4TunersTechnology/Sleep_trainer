@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/generated/l10n.dart';
 import 'package:baby_sleep_scheduler/views/help/expandable_info.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,71 +23,63 @@ class _QandAState extends State<QandA> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ExpandableInfo(
-          label: S.of(context).HowToUseTheFerberSleepTrainerApp,
-          points: [
-            // 'Read this FAQ section (especially the "before you start" section)',
-            S.of(context).ReadThisFAQSection,
-            // 'Review the editor section and make your selection of the timing you want for your baby',
-            S.of(context).ReviewTheEditor,
-            // 'Before starting the training, make sure the baby is drowsy but not asleep',
-            S.of(context).BeforeStartingTheTraining,
-            S.of(context).OnceTheBaby,
-            S.of(context).OnceYouHavePlaced,
-            S.of(context).IfYouHaveABabyMonitor,
-            S.of(context).AsTimeProgresses,
-            S.of(context).ItIsHardTOHear,
-            S.of(context).WhenTheTrainerShows,
-            S.of(context).DontPickUpTheBaby,
-            S.of(context).IfTheBabyISGettingQuiter,
-            S.of(context).WhenYouEnterTheRoom,
-            S.of(context).InTheMorningOnceTheBaby,
-            S.of(context).IfNotTapped,
-
-          ],
-          further:
-              S.of(context).InCaseOfAnUnsuccessful +
-                  S.of(context).ForYourBenefits +
-                  S.of(context).CryingTimeWillReduce +
-                  S.of(context).LessThan5Mins
+            label: "HowToUseTheFerberSleepTrainerApp".tr(),
+            points: [
+              // 'Read this FAQ section (especially the "before you start" section)',
+              "ReadThisFAQSection".tr(),
+              // 'Review the editor section and make your selection of the timing you want for your baby',
+              "ReviewTheEditor".tr(),
+              // 'Before starting the training, make sure the baby is drowsy but not asleep',
+              "BeforeStartingTheTraining".tr(),
+              "OnceTheBaby".tr(),
+              "OnceYouHavePlaced".tr(),
+              "IfYouHaveABabyMonitor".tr(),
+              "AsTimeProgresses".tr(),
+              "ItIsHardTOHear".tr(),
+              "WhenTheTrainerShows".tr(),
+              "DontPickUpTheBaby".tr(),
+              "IfTheBabyISGettingQuiter".tr(),
+              "WhenYouEnterTheRoom".tr(),
+              "InTheMorningOnceTheBaby".tr(),
+              "IfNotTapped".tr(),
+            ],
+            further: "InCaseOfAnUnsuccessful".tr() +
+                "ForYourBenefits".tr() +
+                "CryingTimeWillReduce".tr() +
+                "LessThan5Mins".tr()),
+        ExpandableInfo(
+          label: "WhatIsTheFerberMethod".tr(),
+          main: "SecondNdFaq".tr(),
+          further: "SecondFurther".tr(),
         ),
         ExpandableInfo(
-          label: S.of(context).WhatIsTheFerberMethod,
-          main:S.of(context).SecondNdFaq,
-          further: S.of(context).SecondFurther,
-        ),
+            label: "ThirdFadLabel".tr(),
+            main: "TheProcess".tr(),
+            points: [
+              "Point1".tr(),
+              "Point2".tr(),
+              "Point3".tr(),
+              "Point4".tr(),
+              "Point5".tr(),
+              "Point6".tr(),
+              "Point7".tr(),
+            ],
+            further: "ThirdFurther".tr()),
         ExpandableInfo(
-          label: S.of(context).ThirdFadLabel,
-          main: S.of(context).TheProcess,
-          points: [
-            S.of(context).Point1,
-            S.of(context).Point2,
-            S.of(context).Point3,
-            S.of(context).Point4,
-            S.of(context).Point5,
-            S.of(context).Point6,
-            S.of(context).Point7,
-          ],
-          further:S.of(context).ThirdFurther
-        ),
+            label: "FourthLabel".tr(),
+            main: "FourthMain".tr(),
+            further: "FourthFurther".tr()),
         ExpandableInfo(
-          label: S.of(context).FourthLabel,
-          main:S.of(context).FourthMain,
-          further:S.of(context).FourthFurther
-        ),
+            label: "FifthLabel".tr(),
+            main: "FifthMain".tr(),
+            further: "FifthFurther".tr()),
         ExpandableInfo(
-          label: S.of(context).FifthLabel,
-          main:S.of(context).FifthMain,
-          further:S.of(context).FifthFurther
-        ),
-        ExpandableInfo(
-          label: S.of(context).SixthLabel,
-          main:S.of(context).SixthMain,
-
-          further:S.of(context).SixthFurther
-        ),
+            label: "SixthLabel".tr(),
+            main: "SixthMain".tr(),
+            further: "SixthFurther".tr()),
         ExpansionTile(
           title: Text(
-          S.of(context).PrivacyPolicy,
+            "PrivacyPolicy".tr(),
             style: TextStyle(
               fontSize: 16,
               fontFamily: 'Oswald',
@@ -111,7 +104,7 @@ class _QandAState extends State<QandA> {
                       color:
                           CustomTheme.nightTheme ? Colors.white : Colors.black,
                     ),
-                    text: S.of(context).VisitTheLinkFor,
+                    text: "VisitTheLinkFor".tr(),
                   ),
                   TextSpan(
                     recognizer: TapGestureRecognizer()
@@ -147,7 +140,7 @@ class _QandAState extends State<QandA> {
                       color:
                           CustomTheme.nightTheme ? Colors.white : Colors.black,
                     ),
-                    text: '\n'+S.of(context).Or+'\n',
+                    text: '\n' + "Or".tr() + '\n',
                   ),
                   TextSpan(
                     style: TextStyle(
@@ -157,8 +150,7 @@ class _QandAState extends State<QandA> {
                       color:
                           CustomTheme.nightTheme ? Colors.white : Colors.black,
                     ),
-                    text: S.of(context).ContactUs,
-
+                    text: "ContactUs".tr(),
                   ),
                   TextSpan(
                     recognizer: TapGestureRecognizer()
@@ -204,19 +196,14 @@ class _QandAState extends State<QandA> {
                       color:
                           CustomTheme.nightTheme ? Colors.white : Colors.black,
                     ),
-                    text: S.of(context).Concerns,
-
+                    text: "Concerns".tr(),
                   ),
                 ])),
               ),
             ),
           ],
         ),
-        ExpandableInfo(
-            label: S.of(context).Support,
-
-            main:S.of(context).EightMain
-        ),
+        ExpandableInfo(label: "Support".tr(), main: "EightMain".tr()),
       ],
     );
   }

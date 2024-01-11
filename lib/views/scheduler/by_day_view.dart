@@ -5,6 +5,7 @@ import 'package:baby_sleep_scheduler/global/values.dart' as values;
 import 'package:baby_sleep_scheduler/logic/cache/db.dart';
 import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
 import 'package:baby_sleep_scheduler/theme/theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
@@ -123,7 +124,6 @@ class EditDialog extends StatelessWidget {
     "following",
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -139,7 +139,7 @@ class EditDialog extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                S.of(context).Day+' ${day + 1}',
+                "Day".tr() + ' ${day + 1}',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -287,7 +287,9 @@ class _ByDayViewState extends State<ByDayView> {
             child: Center(
               child: Text(
                 // 'Day ${widget.day + 1}' + (widget.day == 6 ? '+' : ''),
-                S.of(context).Day+' ${widget.day + 1}' + (widget.day == 6 ? '+' : ''),
+                "Day".tr() +
+                    ' ${widget.day + 1}' +
+                    (widget.day == 6 ? '+' : ''),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

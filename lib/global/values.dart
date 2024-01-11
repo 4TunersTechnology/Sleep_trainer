@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/logic/cache/db.dart';
 import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../generated/l10n.dart';
@@ -7,20 +8,20 @@ import '../generated/l10n.dart';
 enum Views { trainer, activity, scheduler, help }
 
 extension ViewsExtension on Views {
-    String  label(BuildContext context) {
+  String label(BuildContext context) {
     switch (this) {
       case Views.trainer:
         // return 'Trainer';
-        return S.of(context).Trainer;
+        return "Trainer".tr();
       case Views.activity:
         // return 'activity';
-        return S.of(context).Activity;
+        return "Activity".tr();
       case Views.scheduler:
         // return 'Editor';
-        return S.of(context).editor;
-        case Views.help:
-          return S.of(context).help;
-        // return 'Help';
+        return "editor".tr();
+      case Views.help:
+        return "help".tr();
+      // return 'Help';
       default:
         return null;
     }
@@ -35,7 +36,7 @@ extension StatesExtension on States {
       case States.sleeping:
         return 'sleeping';
       //germen
-      // return S.of(context).sleeping;
+      // return "sleeping".tr();
       //   return 'Schlafen';
       case States.crying:
         return 'crying';
@@ -43,7 +44,7 @@ extension StatesExtension on States {
       //   return 'weint';
       case States.playing:
         return 'awake';
-        // return 'Wach';
+      // return 'Wach';
       default:
         return null;
     }

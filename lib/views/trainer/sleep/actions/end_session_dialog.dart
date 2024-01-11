@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart';
 
@@ -52,7 +53,6 @@ class _DynamicDialogState extends State<DynamicDialog> {
   @override
   void initState() {
     super.initState();
-    S.load(Locale('en'));
     _unsuccessful = widget.unsuccessful ?? false;
   }
 
@@ -60,7 +60,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
     Navigator.pop(context, true);
     widget.endSession(
       null,
-      S.of(context).Unsuccessful,
+      "Unsuccessful".tr(),
       _textController.text,
     );
   }
@@ -82,7 +82,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
                 autofocus: true,
                 controller: _textController,
                 decoration: InputDecoration(
-                  hintText: S.of(context).AddANote,
+                  hintText: "AddANote".tr(),
                   border: OutlineInputBorder(),
                 ),
                 onSubmitted: (_) => _submit,
@@ -96,7 +96,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
               children: [
                 TextButton(
                   child: Text(
-                    S.of(context).Back,
+                    "Back".tr(),
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -113,7 +113,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
                 const SizedBox(width: 12),
                 TextButton(
                   child: Text(
-                    S.of(context).Submit,
+                    "Submit".tr(),
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -131,7 +131,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
         mainAxisSize: MainAxisSize.min,
         children: [
           SelectionButton(
-            label: S.of(context).DoneSleeping, // Change here
+            label: "DoneSleeping".tr(), // Change here
             onTap: () async {
               Navigator.pop(context, true);
               await widget.endSession();
@@ -139,12 +139,12 @@ class _DynamicDialogState extends State<DynamicDialog> {
           ),
           Divider(),
           SelectionButton(
-            label: S.of(context).Unsuccessful,
+            label: "Unsuccessful".tr(),
             onTap: () => setState(() => _unsuccessful = true),
           ),
           Divider(),
           SelectionButton(
-            label: S.of(context).Cancel,
+            label: "Cancel".tr(),
             onTap: () => Navigator.pop(context),
           ),
         ],
@@ -190,7 +190,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
 //     Navigator.pop(context, true);
 //     widget.endSession(
 //       null,
-//       S.of(context).Unsuccessful,
+//       "Unsuccessful".tr(),
 //       _textController.text,
 //     );
 //   }
@@ -212,7 +212,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
 //                 autofocus: true,
 //                 controller: _textController,
 //                 decoration: InputDecoration(
-//                   hintText: S.of(context).AddANote,
+//                   hintText: "AddANote".tr(),
 //                   border: OutlineInputBorder(),
 //                 ),
 //                 onSubmitted: (_) => _submit,
@@ -227,7 +227,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
 //                 TextButton(
 //                   // color: Theme.of(context).primaryColor,
 //                   child: Text(
-//                     S.of(context).Back,
+//                     "Back".tr(),
 //                     style: const TextStyle(
 //                       color: Colors.white,
 //                       fontWeight: FontWeight.bold,
@@ -245,7 +245,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
 //                 TextButton(
 //                   //color: Theme.of(context).primaryColor,
 //                   child: Text(
-//                     S.of(context).Submit,
+//                     "Submit".tr(),
 //                     style: const TextStyle(
 //                       color: Colors.white,
 //                       fontWeight: FontWeight.bold,
@@ -263,7 +263,7 @@ class _DynamicDialogState extends State<DynamicDialog> {
 //         mainAxisSize: MainAxisSize.min,
 //         children: [
 //           SelectionButton(
-//             // label: S.of(context).DoneSleeping,
+//             // label: "DoneSleeping".tr(),
 //             label:"Done Sleeping",
 //             onTap: () async {
 //               Navigator.pop(context, true);
@@ -273,12 +273,12 @@ class _DynamicDialogState extends State<DynamicDialog> {
 //           Divider(),
 //           SelectionButton(
 //             // label: "Unsuccessful",
-//             label: S.of(context).Unsuccessful,
+//             label: "Unsuccessful".tr(),
 //             onTap: () => setState(() => _unsuccessful = true),
 //           ),
 //           Divider(),
 //           SelectionButton(
-//             label: S.of(context).Cancel,
+//             label: "Cancel".tr(),
 //             onTap: () => Navigator.pop(context),
 //           ),
 //         ],
@@ -305,7 +305,8 @@ class EndSessionDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
