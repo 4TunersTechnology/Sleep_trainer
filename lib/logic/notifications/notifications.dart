@@ -1,5 +1,6 @@
 import 'package:baby_sleep_scheduler/global/values.dart';
 import 'package:baby_sleep_scheduler/logic/cache/prefs.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -13,14 +14,18 @@ abstract class Notifications {
     // Initialise the plugin. app_icon needs to be added as a drawable resource to the Android head project.
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('icon');
+
+    final DarwinInitializationSettings initializationSettingsDarwin =
+        DarwinInitializationSettings(
+            onDidReceiveLocalNotification: (_, __, ___, ____) {});
     // final IOSInitializationSettings initializationSettingsIOS =
     // IOSInitializationSettings();
     final InitializationSettings initializationSettings =
         InitializationSettings(
       android: initializationSettingsAndroid,
-      // iOS: initializationSettingsIOS,
+      iOS: initializationSettingsDarwin,
     );
-    //await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
     tz.initializeTimeZones();
     final String currentTimeZone =
